@@ -21,11 +21,11 @@ namespace ArduinoTemperatura
         {
             string[] v = SerialPort.GetPortNames();
             Array.Sort(v);
-            toolStripPuertosComboBox.Items.Add(v);
+            toolStripPuertosComboBox.Items.AddRange(v);
 
             string[] velocidad = { "2400", "4800", "9600","19200"};
 
-            toolStripVelocidadComboBox.Items.Add(velocidad);
+            toolStripVelocidadComboBox.Items.AddRange(velocidad);
 
         }
 
@@ -52,8 +52,8 @@ namespace ArduinoTemperatura
         {
             try
             {
-                serialPort.BaudRate = int.Parse(toolStripVelocidadComboBox.SelectedText);
-                serialPort.PortName = toolStripPuertosComboBox.SelectedText;
+                serialPort.BaudRate = int.Parse(toolStripVelocidadComboBox.SelectedItem.ToString());
+                serialPort.PortName = toolStripPuertosComboBox.SelectedItem.ToString();
 
 
             }
@@ -61,6 +61,17 @@ namespace ArduinoTemperatura
             {
                 MessageBox.Show(" Problema de conexión: "+ error );
             }
+        }
+
+        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            serialPort.Open();
+        }
+
+        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Prueba formprueba = new Prueba(serialPort);
+            formprueba.Show();
         }
     }
 }
