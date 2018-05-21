@@ -34,14 +34,15 @@
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.velocidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripPuertosComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.velocidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripVelocidadComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.verificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desconectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.temperaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.configuracionToolStripMenuItem});
+            this.configuracionToolStripMenuItem,
+            this.temperaturaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(461, 24);
@@ -96,21 +98,21 @@
             this.puertosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripPuertosComboBox});
             this.puertosToolStripMenuItem.Name = "puertosToolStripMenuItem";
-            this.puertosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puertosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.puertosToolStripMenuItem.Text = "Puertos";
+            // 
+            // toolStripPuertosComboBox
+            // 
+            this.toolStripPuertosComboBox.Name = "toolStripPuertosComboBox";
+            this.toolStripPuertosComboBox.Size = new System.Drawing.Size(121, 23);
             // 
             // velocidadToolStripMenuItem
             // 
             this.velocidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripVelocidadComboBox});
             this.velocidadToolStripMenuItem.Name = "velocidadToolStripMenuItem";
-            this.velocidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.velocidadToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.velocidadToolStripMenuItem.Text = "Velocidad";
-            // 
-            // toolStripPuertosComboBox
-            // 
-            this.toolStripPuertosComboBox.Name = "toolStripPuertosComboBox";
-            this.toolStripPuertosComboBox.Size = new System.Drawing.Size(121, 23);
             // 
             // toolStripVelocidadComboBox
             // 
@@ -120,34 +122,41 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 6);
+            // 
+            // verificarToolStripMenuItem
+            // 
+            this.verificarToolStripMenuItem.Name = "verificarToolStripMenuItem";
+            this.verificarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.verificarToolStripMenuItem.Text = "Verificar";
+            this.verificarToolStripMenuItem.Click += new System.EventHandler(this.verificarToolStripMenuItem_Click);
             // 
             // conectarToolStripMenuItem
             // 
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.conectarToolStripMenuItem.Text = "Conectar";
             this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // desconectarToolStripMenuItem
             // 
             this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
-            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.desconectarToolStripMenuItem.Text = "Desconectar";
-            // 
-            // verificarToolStripMenuItem
-            // 
-            this.verificarToolStripMenuItem.Name = "verificarToolStripMenuItem";
-            this.verificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verificarToolStripMenuItem.Text = "Verificar";
-            this.verificarToolStripMenuItem.Click += new System.EventHandler(this.verificarToolStripMenuItem_Click);
             // 
             // pruebaToolStripMenuItem
             // 
             this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.pruebaToolStripMenuItem.Text = "Prueba";
             this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
+            // 
+            // temperaturaToolStripMenuItem
+            // 
+            this.temperaturaToolStripMenuItem.Name = "temperaturaToolStripMenuItem";
+            this.temperaturaToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.temperaturaToolStripMenuItem.Text = "Temperatura";
+            this.temperaturaToolStripMenuItem.Click += new System.EventHandler(this.temperaturaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -155,6 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 246);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -182,6 +192,7 @@
         private System.Windows.Forms.ToolStripMenuItem conectarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem desconectarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem temperaturaToolStripMenuItem;
     }
 }
 

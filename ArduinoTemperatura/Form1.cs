@@ -73,5 +73,11 @@ namespace ArduinoTemperatura
             Prueba formprueba = new Prueba(serialPort);
             formprueba.Show();
         }
+
+        private void temperaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTemperatura formTemperatura = new FormTemperatura(serialPort,this);
+            formTemperatura.Show();
+        }
     }
 }
