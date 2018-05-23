@@ -12,6 +12,7 @@ namespace ArduinoTemperatura
         FormTemperatura formTemperatura;
         FileStream fs;
         StreamWriter sw;
+        StreamReader sr;
         public Form1()
         {
             InitializeComponent();
@@ -86,6 +87,7 @@ namespace ArduinoTemperatura
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
+            
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
@@ -115,6 +117,26 @@ namespace ArduinoTemperatura
 
             }
 
+
+        }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            if(openFile.ShowDialog() == DialogResult.OK  )
+            {
+                fs = new FileStream(openFile.FileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(fs);
+                string datos=sr.ReadLine();
+                int tiempo;
+                int temperatura;
+                while (datos != null)
+                {
+                    
+                }
+
+
+            }
 
         }
     }
