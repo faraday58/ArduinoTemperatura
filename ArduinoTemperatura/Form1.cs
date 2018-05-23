@@ -9,6 +9,9 @@ namespace ArduinoTemperatura
     public partial class Form1 : Form
     {
         SerialPort serialPort;
+        FormTemperatura formTemperatura;
+        FileStream fs;
+        StreamWriter sw;
         public Form1()
         {
             InitializeComponent();
@@ -76,8 +79,43 @@ namespace ArduinoTemperatura
 
         private void temperaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormTemperatura formTemperatura = new FormTemperatura(serialPort,this);
+            formTemperatura = new FormTemperatura(serialPort,this);
             formTemperatura.Show();
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    fs = new FileStream(saveFile.FileName, FileMode.Append, FileAccess.Write);
+                    sw = new StreamWriter(fs);
+                    sw.WriteLine("Tiempo Temperatura ");
+                    int N = formTemperatura.temperaturas.Count;
+                    for (int i = 0; i < N; i++)
+                    {
+                        sw.WriteLine(" " + formTemperatura.tiempos[i] + " " + formTemperatura.temperaturas[i]);
+                    }
+                }
+                catch(IOException error)
+                {
+                    MessageBox.Show("Error " + error.Message);
+                }
+                finally
+                {
+                    sw.Close();
+                    fs.Close();
+
+                }
+
+
+
+            }
+
+
         }
     }
 }
