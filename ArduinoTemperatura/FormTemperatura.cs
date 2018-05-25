@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -34,6 +33,7 @@ namespace ArduinoTemperatura
 
         private void iniciarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             tiempo_adquisición.Start();
         }
 

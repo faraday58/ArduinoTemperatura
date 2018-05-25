@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chTemperatura = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tiempo_adquisición = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -44,17 +44,17 @@
             // 
             // chTemperatura
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chTemperatura.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chTemperatura.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chTemperatura.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chTemperatura.Legends.Add(legend1);
             this.chTemperatura.Location = new System.Drawing.Point(58, 83);
             this.chTemperatura.Name = "chTemperatura";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "TiempoTemp";
-            this.chTemperatura.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "TiempoTemp";
+            this.chTemperatura.Series.Add(series1);
             this.chTemperatura.Size = new System.Drawing.Size(562, 258);
             this.chTemperatura.TabIndex = 0;
             this.chTemperatura.Text = "chart1";
@@ -86,14 +86,14 @@
             // iniciarToolStripMenuItem
             // 
             this.iniciarToolStripMenuItem.Name = "iniciarToolStripMenuItem";
-            this.iniciarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iniciarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.iniciarToolStripMenuItem.Text = "Iniciar";
             this.iniciarToolStripMenuItem.Click += new System.EventHandler(this.iniciarToolStripMenuItem_Click);
             // 
             // pararToolStripMenuItem
             // 
             this.pararToolStripMenuItem.Name = "pararToolStripMenuItem";
-            this.pararToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pararToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.pararToolStripMenuItem.Text = "Parar";
             this.pararToolStripMenuItem.Click += new System.EventHandler(this.pararToolStripMenuItem_Click);
             // 
@@ -116,12 +116,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart chTemperatura;
         private System.Windows.Forms.Timer tiempo_adquisición;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem controlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iniciarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pararToolStripMenuItem;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chTemperatura;
     }
 }

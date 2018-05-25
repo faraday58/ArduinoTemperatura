@@ -2,8 +2,11 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.IO.Ports;
 using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 namespace ArduinoTemperatura
 {
     public partial class Form1 : Form
@@ -135,6 +138,24 @@ namespace ArduinoTemperatura
                     
                 }
 
+
+            }
+
+        }
+
+        private void exToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Document docpdf = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if( saveFileDialog.ShowDialog() ==  DialogResult.OK)
+            {
+                PdfWriter pdfFile = PdfWriter.GetInstance(docpdf, new FileStream(saveFileDialog.FileName, FileMode.Append));
+                docpdf.Open();
+                MemoryStream imagenGraficar = new MemoryStream();
+                formTemperatura.chTemperatura.SaveImage(imagenGraficar, ChartImageFormat.Png);
+                iTextSharp.text.Image GrafImagenPDF = iTextSharp.text.Image.GetInstance(imagenGraficar.GetBuffer());
+                docpdf.Add(GrafImagenPDF);
+                docpdf.Close();
 
             }
 
